@@ -1,0 +1,46 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;       
+    background-color: #506566;
+}
+aside {
+    background-color: #23354B;
+    color: #CDB09E;
+    padding: 25px;
+    margin: 5px;
+}
+
+/* Enable flexbox layout and give each aside element equal space in the flexbox layout */
+nav {
+    display: flex;
+}
+nav > aside {
+    flex: 1;
+}
+
+/* New media query that is active when the screen size is less than 500px */
+@media (max-width: 500px) {
+    /* CSS rule for the nav selector that disables the flexbox layout.  When the browser window is less than 500px, the elements are laid out vertically */
+    nav {
+        display: block;
+    }
+}
+
+/* Disable bg color when page is being printed */
+@media print {
+    /* Disables the flexbox layout when page is being printed */
+    nav {
+        display: block;
+    }
+    /* Changes the font family and background color when page is being printed */
+    body {
+        background-color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    /* Changes the background color, text color and spacing for the <aside> elements when page is being printed */
+    aside {
+        background-color: white;
+        color: black;
+        padding: 10px;
+        margin: 5px;
+    }
+}
